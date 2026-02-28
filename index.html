@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Birthday Surprise for Didi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f97316", // Warm sunset orange
+                        "secondary": "#a855f7", // Purple from the dusk sky
+                        "accent": "#f43f5e", // Sunset pink
+                        "background-light": "#fffaf5",
+                        "background-dark": "#1a0b0e",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --sunset-orange: #f97316;
+            --sunset-pink: #f43f5e;
+            --sunset-purple: #7e22ce;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26, 11, 14, 0.4), rgba(255, 250, 245, 1));
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-auto-rows: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+<div class="relative min-h-screen overflow-x-hidden">
+<header class="px-6 py-4">
+<nav class="max-w-6xl mx-auto flex items-center justify-between glass rounded-full px-6 py-3 shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-3xl">favorite</span>
+<span class="font-bold text-lg tracking-tight">For My Didi</span>
+</div>
+<div class="flex items-center justify-between bg-gray-200 p-4 rounded-full relative">
+
+  <!-- LEFT SIDE (Heart + Text) -->
+  <div class="flex items-center gap-3 relative">
+
+    <!-- Heart Button -->
+    <button onclick="showHeart()" 
+      class="text-3xl text-gray-500 hover:text-pink-500 transition">
+      ❤️
+    </button>
+
+    <!-- Popup Heart -->
+    <span id="heartPopup"
+      class="absolute left-0 text-4xl text-pink-500 opacity-0 scale-50 transition-all duration-500">
+      💖
+    </span>
+
+    
+
+  </div>
+
+  <!-- RIGHT SIDE (Play Music) -->
+  <a href="https://youtu.be/MNhKgf0yU0Q?si=lQCrhyOAU5LaM_g4" target="_blank"
+     class="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-full transition-all group">
+     
+    <span class="material-symbols-outlined text-xl">music_note</span>
+    <span class="text-sm font-bold">Play Music</span>
+    
+  </a>
+
+</div>
+
+
+<script>
+  function showHeart() {
+    const heart = document.getElementById("heartPopup");
+
+    heart.classList.remove("opacity-0", "scale-50");
+    heart.classList.add("opacity-100", "scale-100", "-translate-y-10");
+
+    setTimeout(() => {
+      heart.classList.add("opacity-0", "scale-50");
+      heart.classList.remove("opacity-100", "scale-100", "-translate-y-10");
+    }, 800);
+  }
+</script>
+
+</nav>
+</header>
+<main class="relative">
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Temple Background" class="w-full h-full object-cover" src="/photosss/🫰🤗🫰 (1).heic"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div> 
+<div class="container mx-auto px-6 text-center z-10">
+<div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2 rounded-full mb-8 border border-white/40 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">celebration</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary/90">It's Your Special Day</span>
+</div>
+<h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter text-glow">
+<span class="bg-clip-text text-transparent bg-gradient-to-br from-orange-500 via-pink-600 to-purple-700">
+                        Happy Birthday<br/>Didi ❤️
+                    </span>
+</h1>
+<p class="text-lg md:text-2xl text-slate-800 dark:text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+                    Wishing a very happy birthday to my dearest Didi 🌸 May all your dreams come true and may this year bring you endless joy.Always be happy may no evil eye touch you.
+                </p>
+              <section id="magic" class="...">
+<a id="scrollBtn"
+   class="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-full font-bold shadow-xl shadow-primary/30 transition-transform hover:scale-105 flex items-center gap-2 cursor-pointer">
+   <span class="material-symbols-outlined">auto_awesome</span>
+   Scroll for Magic
+</a>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("scrollBtn");
+    const target = document.getElementById("magic");
+
+    if (!btn || !target) return;
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: target.offsetTop - 100, // 100px upar rukega (adjust kar sakte ho)
+        behavior: "smooth"
+      });
+    });
+  });
+</script>
+
+</div>
+</section>
+<section class="py-24 px-6 bg-white/30 relative">
+<div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-background-light/50"></div>
+<div class="max-w-4xl mx-auto">
+<div class="glass p-10 md:p-16 rounded-xl shadow-2xl text-center relative overflow-hidden border-orange-100">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-2xl"></div>
+<span class="text-primary text-7xl mb-6 font-serif leading-none">
+    “
+</span>
+<h2 class="text-3xl md:text-4xl font-bold mb-8 text-slate-800 dark:text-slate-100">To My Dearest Sister</h2>
+<div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-loose">
+<p>
+                            Dear Didi, words can't express how much you mean to me. You've been my constant support, my secret keeper, and my second mother. Your strength inspires me every single day.
+                        </p>
+<p>
+                            Whether it was helping me with my homework or standing up for me when I got into trouble, you've always been there. Today, I want to thank you for just being you—the kindest, most beautiful soul I know.
+                        </p>
+<p class="font-bold text-accent italic text-xl">
+                            Wishing you a year filled with as much joy as you've brought into my life.
+                        </p>
+</div>
+<div class="mt-10 flex justify-center">
+<div class="h-1.5 w-24 bg-gradient-to-r from-primary via-accent to-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-slate-800"> Beautiful Journey</h2>
+<p class="text-slate-500 text-lg">Some Moments</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<div class="space-y-4 md:space-y-6">
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-[3/4] bg-primary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Vintage childhood photo of siblings playing" src="/akaash1.jpeg"/>
+</div>
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-square bg-secondary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Two sisters laughing together outdoors" src="/img 2.jpeg"/>
+</div>
+</div>
+<div class="space-y-4 md:space-y-6 pt-8">
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-square bg-primary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Colorful birthday party decorations and balloons" src="/img 3.jpeg"/>
+</div>
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-[3/4] bg-secondary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Two people celebrating with cake" src="/img 4.jpeg"/>
+</div>
+</div>
+<div class="space-y-4 md:space-y-6">
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-[3/4] bg-primary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling woman in elegant dress" src="/photosss/img 5.heic"/>
+</div>
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-square bg-secondary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Hands holding polaroid photos of memories" src="/photosss/img 6.heic"/>
+</div>
+</div>
+<div class="space-y-4 md:space-y-6 pt-12">
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-square bg-primary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Group of friends laughing at a party" src="/photosss/img 7.heic"/>
+</div>
+<div class="rounded-xl overflow-hidden hover:scale-[1.02] transition-transform shadow-lg aspect-[3/4] bg-secondary/10 relative border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="Beautiful sunset view through flowers" src="/akash2.jpeg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 bg-gradient-to-b from-orange-50/50 to-purple-50/50">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<button id="surpriseBtn"
+  class="relative bg-gradient-to-r from-primary to-accent text-white text-xl font-extrabold px-12 py-6 rounded-full shadow-2xl shadow-primary/40 transform transition-all hover:scale-110 active:scale-95 flex items-center gap-3 mx-auto">
+  <span class="material-symbols-outlined text-2xl">card_giftcard</span>
+  Click for a Surprise 🎁
+</button>
+<style>
+  .flower {
+    position: fixed;
+    top: -50px;
+    font-size: 28px;
+    pointer-events: none;
+    z-index: 99999;
+    animation: fall linear forwards;
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,.18));
+  }
+
+  @keyframes fall {
+    to {
+      transform: translate(var(--xMove), 115vh) rotate(var(--rot));
+      opacity: 0.95;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("surpriseBtn");
+    if (!btn) return;
+
+    function flowerBurst(durationMs = 3500, density = 16) {
+      const flowers = ["🌸","🌺","🌼","🌷","💐","🌹","🪷","🌻"];
+      const endTime = Date.now() + durationMs;
+
+      const interval = setInterval(() => {
+        // density = ek tick me kitne flowers
+        for (let i = 0; i < density; i++) {
+          const el = document.createElement("div");
+          el.className = "flower";
+          el.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+
+          const startX = Math.random() * window.innerWidth;
+          const xMove = (Math.random() * 320 - 160) + "px"; // zyada spread
+          const rot = (Math.random() * 1080 - 540) + "deg";  // zyada rotation
+          const time = (Math.random() * 2 + 2.5) + "s";      // 2.5s - 4.5s
+          const size = (Math.random() * 18 + 18) + "px";     // size variation
+          const delay = (Math.random() * 0.2) + "s";
+
+          el.style.left = startX + "px";
+          el.style.fontSize = size;
+          el.style.setProperty("--xMove", xMove);
+          el.style.setProperty("--rot", rot);
+          el.style.animationDuration = time;
+          el.style.animationDelay = delay;
+
+          document.body.appendChild(el);
+          el.addEventListener("animationend", () => el.remove());
+        }
+
+        if (Date.now() > endTime) clearInterval(interval);
+      }, 90); // fast spawn
+    }
+
+    btn.addEventListener("click", () => {
+      // BOHOT SARE flowers: duration + density increase
+      flowerBurst(4500, 22);
+    });
+  });
+</script>
+</main>
+<footer class="py-12 px-6 border-t border-orange-100">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">favorite</span>
+<p class="text-slate-500 font-medium">Made with ❤️ by Your Brother (Bishal)</p>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a id="instaBtn" class="text-slate-400 hover:text-primary transition-colors cursor-pointer">
+  <span class="material-symbols-outlined">photo_camera</span>
+</a>
+</div>
+</div>
+</footer><div id="instaPopup"
+     class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+  <div class="bg-white p-8 rounded-2xl shadow-2xl text-center relative w-80">
+
+    <button id="closeInsta"
+      class="absolute top-3 right-3 text-xl font-bold cursor-pointer">×</button>
+
+    <h3 class="text-xl font-bold mb-4">💖</h3>
+
+    <a href="https://instagram.com/itss__arpita__"
+       target="_blank"
+       class="text-primary font-bold text-lg hover:underline">
+       @itss__arpita__
+    </a>
+
+  </div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btn = document.getElementById("instaBtn");
+  const popup = document.getElementById("instaPopup");
+  const close = document.getElementById("closeInsta");
+
+  if (!btn || !popup || !close) return;
+
+  btn.addEventListener("click", function () {
+    popup.classList.remove("hidden");
+    popup.classList.add("flex");
+  });
+
+  close.addEventListener("click", function () {
+    popup.classList.add("hidden");
+    popup.classList.remove("flex");
+  });
+
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+      popup.classList.remove("flex");
+    }
+  });
+
+});
+</script>
+</body></html>
